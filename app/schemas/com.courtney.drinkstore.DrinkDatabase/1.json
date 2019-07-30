@@ -1,0 +1,51 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "7f369594a00365b18c2a2c500ba9250a",
+    "entities": [
+      {
+        "tableName": "Drink",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`brandName` TEXT NOT NULL, `area` TEXT NOT NULL, `storeName` TEXT NOT NULL, `phone` TEXT NOT NULL, PRIMARY KEY(`phone`))",
+        "fields": [
+          {
+            "fieldPath": "brandName",
+            "columnName": "brandName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "area",
+            "columnName": "area",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "storeName",
+            "columnName": "storeName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "phone",
+            "columnName": "phone",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "phone"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"7f369594a00365b18c2a2c500ba9250a\")"
+    ]
+  }
+}
